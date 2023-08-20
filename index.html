@@ -1,0 +1,156 @@
+index.html
+<html>
+    <head>
+        <title>Outer Space</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js">
+          
+        </script>
+          <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+      <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/twoway-motion/twoway-motion.js"></script>
+
+    </head>
+    <body>
+        <a-scene >
+    
+            <a-entity light="type: hemisphere; color: #445451; groundColor: #445451; intensity: 2.5"></a-entity>
+<!--            <a-light type="ambient" color="#445451"></a-light>
+-->
+      <!-- Allows camera to rotate on click -->    
+          <a-entity id="rig" movement-controls position="200 50 80" rotation='-15 25 0' >
+              <a-entity  id="camera"
+                  camera
+                  twoway-motion="nonMobileLoad: true; chatty: false; speed: 100;"
+                  universal-controls 
+                  position="0 1.6 0"
+                  look-controls="pointerLockEnabled: true; acceleration: 10"
+                  wasd-controls="acceleration: 100">
+              </a-entity>
+           </a-entity>
+        
+          <!-- Creates the galaxy image background -->
+          <a-sky src="textures/galaxy.jpg"></a-sky>
+          
+          <!-- Generates a light from the center star and casts shadow on things that recieve a shadow -->
+           <a-entity light="type:point; castShadow: true; intensity: 0.9; distance: 1000; color: #FFF; decay: 2" position="0 0 0" ></a-entity>
+          
+          <a-entity light="type:directional; castShadow: true; intensity: 0.25; distance: 800; color: #FFF; decay: 2" position="0 100 -200" ></a-entity>
+          
+           <a-sphere radius="35" color="white" src="textures/sun.jpg" position="0 0 0" rotation="0 .01 0"
+          animation="property: rotation;
+                     from: 0 0 0;
+                     to: 0 360 0;
+                     dur: 177576;
+                     loop: true;
+                     easing: linear">
+          
+          
+          </a-sphere>
+          <a-torus position="0 0 0" radius="78" color="white" rotation="-90 0 0" radius-tubular="0.05" material="" geometry=""></a-torus>
+          <a-torus position="0 0 0" radius="80.75" color="white" rotation="-90 0 0" radius-tubular="0.05" material="" geometry=""></a-torus>
+          <a-torus position="0 0 0" radius="115" color="white" rotation="-90 0 0" radius-tubular="0.05" material="" geometry=""></a-torus>
+          <a-torus position="0 0 0" radius="135" color="white" rotation="-90 0 0" radius-tubular="0.05" material="" geometry=""></a-torus>
+          <a-torus position="0 0 0" radius="282.5" color="white" rotation="-90 0 0" radius-tubular="0.1" material="" geometry=""></a-torus>
+          <a-torus position="0 0 0" radius="457" color="white" rotation="-90 0 0" radius-tubular="0.1" material="" geometry=""></a-torus>
+          <a-torus position="0 0 0" radius="840" color="white" rotation="-90 0 0" radius-tubular="0.1" material="" geometry=""></a-torus>
+          <a-torus position="0 0 0" radius="1275" color="white" rotation="-90 0 0" radius-tubular="0.1" material="" geometry=""></a-torus>
+          
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 78335; easing: linear">
+          <a-sphere shadow="receive: true" radius="0.38" color='white' src="textures/mercury.jpg" position="78 0.5 -5" rotation="0 .01 0"
+          animation="property: rotation;
+                     from: 0 0 0;
+                     to: 0 360 0;
+                     dur: 177576;
+                     loop: true;
+                     easing: linear"></a-sphere>
+          </a-entity>
+          
+          
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 58335; easing: linear">
+          <a-sphere shadow="receive: true" radius="0.95" src="textures/venus.jpg" position="80.75 0.5 -5" rotation="0 177.3 0"
+                    animation="property: rotation;
+                     from: 0 360 0;
+                     to: 0 0 0;
+                     dur: 736363;
+                     loop: true;
+                     easing: linear"></a-sphere>
+          </a-entity>
+          
+          
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
+          <a-sphere shadow="receive: true" radius="1" src="textures/earthNight.jpg" position="115 0.5 -5" rotation="0 0 0"
+                    animation="property: rotation;
+                     from: 0 0 0;
+                     to: 0 360 0;
+                     dur: 3000;
+                     loop: true;
+                     easing: linear"></a-sphere>
+            </a-entity>
+          
+          
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 40000; easing: linear">
+          <a-sphere shadow="receive: true" radius="0.53" color='white' src="textures/mars.jpg" position="135 0.5 -5" animation="property: rotation;
+                     from: 0 0 0;
+                     to: 0 360 0;
+                     dur: 3121;
+                     loop: true;
+                     easing: linear"></a-sphere>
+            </a-entity>
+          
+          
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 108325; easing: linear">
+          <a-sphere shadow="receive: true" radius="11" color='white' src="textures/jupiter.jpg" position="282.5 0.5 -5" animation="property: rotation;
+                     from: 0 0 0;
+                     to: 0 360 0;
+                     dur: 4968;
+                     loop: true;
+                     
+                     easing: linear"></a-sphere>
+            </a-entity>
+
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 16165; easing: linear">
+            
+          <a-sphere shadow="receive: true" radius="9.13" color='white' src="textures/saturn.jpg" position="457 0.5 -5" animation="property: rotation;
+                     from: 0 0 0;
+                     to: 0 360 0;
+                     dur: 1364;
+                     loop: true;
+                     easing: linear">
+           
+
+            </a-sphere>
+            
+            </a-entity>
+          
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 16165; easing: linear">
+            <a-ring shadow="receive: true" side="double" repeat="2" color="white" position="457 0.5 -5" radius-inner="13" radius-outer="15" rotation="45 0 45">  </a-ring>
+            <a-ring shadow="receive: true" side="double" repeat="2" color="white" position="457 0.5 -5" radius-inner="16" radius-outer="17" rotation="45 0 45">  </a-ring>
+            <a-ring shadow="receive: true" side="double" repeat="2" color="white" position="457 0.5 -5" radius-inner="18" radius-outer="21" rotation="45 0 45">  </a-ring>
+            <a-ring shadow="receive: true" side="double" repeat="2" color="white" position="457 0.5 -5" radius-inner="22" radius-outer="23" rotation="45 0 45">  </a-ring>
+          
+          </a-entity>
+          
+          
+          
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 11335; easing: linear">
+          <a-sphere shadow="receive: true" radius="4" color='white' src="textures/uranus.jpg" position="840 0.5 -5" animation="property: rotation;
+                     from: 0 0 0;
+                     to: 0 360 0;
+                     dur: 2182;
+                     loop: true;
+                     easing: linear"></a-sphere>
+            </a-entity>
+          
+          
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 9000; easing: linear">
+                <a-sphere shadow="receive: true" radius="3.86" color='white' src="textures/neptune.jpg" position="1275 0.5 -5" animation="property: rotation;
+                     from: 0 0 0;
+                     to: 0 360 0;
+                     dur: 2030;
+                     loop: true;
+                     easing: linear">          
+                </a-sphere>
+          </a-entity>
+          
+        </a-scene>
+    </body>
+</html>
